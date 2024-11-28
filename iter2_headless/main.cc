@@ -87,8 +87,6 @@ main(void)
         .grid_length = 150
     };
 
-    printf("running with %d thread(s)\n", omp_get_max_threads());
-
     struct trc_time_struct trc;
     trc_init(&trc);
 
@@ -113,7 +111,7 @@ main(void)
         particles[i].mass = rand();
     }
 
-    for (int i = 0; i < 100000; i++)
+    for (int i = 0; i < 100'000; i++)
         one_step(&part_hash_map, particles, &params);
 
     trc_tock(&trc);

@@ -1,0 +1,11 @@
+number of threads,time
+running with 1 thread(s)
+1,2
+running with 2 thread(s)
+2,2
+running with 4 thread(s)
+4,2
+running with 8 thread(s)
+8,2
+running with 16 thread(s)
+16,2

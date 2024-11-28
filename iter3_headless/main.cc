@@ -113,7 +113,7 @@ main(int argc, char** argv)
     params.n_cells_x = 16;
     params.n_cells_y = 16;
     params.grid_length = 150;
-    params.n_iterations = 100000;
+    params.n_iterations = 1;
 
     MPI_Init(&argc, &argv);
 
