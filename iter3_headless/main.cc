@@ -7,6 +7,7 @@
 #include <omp.h>
 #include <raylib.h>
 
+#include "../common/trace.h"
 #include "common.h"
 #include "Particle.h"
 #include "io.h"
@@ -118,6 +119,9 @@ main(int argc, char** argv)
 
     MPI_Comm_rank(MPI_COMM_WORLD, &params.self_rank);
 
+    struct trc_time_struct trc;
+    trc_init(&trc);
+
     Extent partition_extent, depend_extent;
     sync_init(&params, &depend_extent, &partition_extent);
 
@@ -138,7 +142,7 @@ main(int argc, char** argv)
     }
 
     if (params.self_rank == 0)
-        printf("\n");
+        trc_tock(&trc);
 
     MPI_Finalize();
     return 0;

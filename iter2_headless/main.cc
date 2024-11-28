@@ -6,6 +6,7 @@
 #include <stdint.h>
 #include <omp.h>
 
+#include "../common/trace.h"
 #include "common.h"
 #include "Particle.h"
 #include "equations.h"
@@ -88,6 +89,9 @@ main(void)
 
     printf("running with %d thread(s)\n", omp_get_max_threads());
 
+    struct trc_time_struct trc;
+    trc_init(&trc);
+
     srand(params.seed);
     Particle* particles = new Particle[params.n_particles];
 
@@ -112,5 +116,6 @@ main(void)
     for (int i = 0; i < 100000; i++)
         one_step(&part_hash_map, particles, &params);
 
+    trc_tock(&trc);
     return 0;
 }

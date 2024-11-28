@@ -1,5 +1,5 @@
 EXE=nbody_
-OBJ=main.o Particle.o io.o file_dump.o
+OBJ=main.o Particle.o io.o file_dump.o ../common/trace.o
 CC=mpic++
 CXXFLAGS=-O3 -Wall -Wextra -Wpedantic -fopenmp
 LDFLAGS=-lraylib

@@ -1,5 +1,5 @@
 EXE=nbody
-OBJ=main.o Particle.o equations.o
+OBJ=main.o Particle.o equations.o ../common/trace.o
 CC=g++
 CXXFLAGS=-O3 -fopenmp
 LDFLAGS=
